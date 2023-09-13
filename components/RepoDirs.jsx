@@ -1,6 +1,8 @@
 import Link from "next/link";
+
+const username = "jonik2909";
+
 async function fetchRepoContents(name) {
-  const username = "jonik2909";
   await new Promise((resolve) => setTimeout(resolve, 2000));
   const response = await fetch(
     `https://api.github.com/repos/${username}/${name}/contents`
@@ -9,7 +11,6 @@ async function fetchRepoContents(name) {
   return contents;
 }
 const RepoDirs = async ({ name }) => {
-  const username = "jonik2909";
   const contents = await fetchRepoContents(name);
   const dirs = contents.filter((content) => content.type === "dir");
   return (

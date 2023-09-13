@@ -1,9 +1,9 @@
-import { UserButton, auth } from '@clerk/nextjs'
-import Link from 'next/link'
-import React from 'react'
+import { UserButton, auth } from "@clerk/nextjs";
+import Link from "next/link";
+import React from "react";
 
 const Header = () => {
-  const { userId } = auth()
+  const { userId } = auth();
 
   return (
     <>
@@ -16,6 +16,9 @@ const Header = () => {
           </div>
 
           <div className="flex items-center font-bold">
+            <Link href="/repos" className="text-gray-300 hover:text-white mr-4">
+              Repos
+            </Link>
             {!userId ? (
               // 로그인이 안된 경우
               <>
@@ -55,7 +58,7 @@ const Header = () => {
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

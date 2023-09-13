@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { FaStar, FaCodeBranch, FaEye } from "react-icons/fa";
+
+const username = "jonik2909";
+
 async function fetchRepos() {
-  const username = "jonik2909";
   const response = await fetch(
     `https://api.github.com/users/${username}/repos`
   );
@@ -10,7 +12,6 @@ async function fetchRepos() {
   return repos;
 }
 const ReposPage = async () => {
-  const username = "jonik2909";
   const repos = await fetchRepos();
   return (
     <div>
